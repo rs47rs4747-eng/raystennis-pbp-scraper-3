@@ -32,7 +32,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        chunk: [0, 1, 2, 3, 4]  # 5 parallel jobs per run
+        chunk: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  # 10 parallel jobs per run
 
     steps:
       - name: Checkout repo
@@ -62,7 +62,7 @@ jobs:
             const range = process.env.RANGE;
             const srcFile = '_uuids_' + range + '.json';
             const all = JSON.parse(fs.readFileSync(srcFile, 'utf8'));
-            const CHUNKS = 5;
+            const CHUNKS = 10;
             const size = Math.ceil(all.length / CHUNKS);
             const idx = ${{ matrix.chunk }};
             const slice = all.slice(idx * size, (idx + 1) * size);
