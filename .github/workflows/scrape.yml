@@ -32,7 +32,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        chunk: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  # 10 parallel jobs per run
+        chunk: [0, 1, 2]  # 3 parallel jobs per run
 
     steps:
       - name: Checkout repo
@@ -62,7 +62,7 @@ jobs:
             const range = process.env.RANGE;
             const srcFile = '_uuids_' + range + '.json';
             const all = JSON.parse(fs.readFileSync(srcFile, 'utf8'));
-            const CHUNKS = 10;
+            const CHUNKS = 3;
             const size = Math.ceil(all.length / CHUNKS);
             const idx = ${{ matrix.chunk }};
             const slice = all.slice(idx * size, (idx + 1) * size);
@@ -78,7 +78,7 @@ jobs:
           UUID_FILE: ${{ github.workspace }}/_chunk_${{ github.event.inputs.range || 'middle' }}_${{ matrix.chunk }}.json
         run: |
           mkdir -p pbp_matches
-          node scrape_pbp_from_uuid_list.js --concurrency 5 --max ${{ github.event.inputs.max || 500 }}
+          node scrape_pbp_from_uuid_list.js --concurrency 3 --max ${{ github.event.inputs.max || 500 }}
 
       - name: Commit scraped matches
         env:
