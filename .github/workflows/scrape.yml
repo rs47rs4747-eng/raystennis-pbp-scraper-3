@@ -71,13 +71,32 @@ jobs:
             console.log(range + ' chunk ${{ matrix.chunk }}:', slice.length, 'UUIDs');
           "
 
-      - name: Run scraper
+      - name: Run scraper (with mid-run commits)
         env:
           PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium-browser
           OUT_DIR: ${{ github.workspace }}/pbp_matches
           UUID_FILE: ${{ github.workspace }}/_chunk_${{ github.event.inputs.range || 'middle' }}_${{ matrix.chunk }}.json
+          RANGE: ${{ github.event.inputs.range || 'middle' }}
         run: |
           mkdir -p pbp_matches
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Background committer: commit+push every 3 min so we never lose >3min of work
+          (
+            while true; do
+              sleep 180
+              cd "$GITHUB_WORKSPACE"
+              git add pbp_matches/ 2>/dev/null || true
+              if ! git diff --cached --quiet 2>/dev/null; then
+                N=$(git diff --cached --name-only | wc -l | tr -d ' ')
+                git commit -m "mid-run $RANGE chunk ${{ matrix.chunk }}: +$N" 2>/dev/null || true
+                git pull --rebase origin main 2>/dev/null || true
+                git push origin main 2>/dev/null || true
+              fi
+            done
+          ) &
+          COMMITTER_PID=$!
+          trap "kill $COMMITTER_PID 2>/dev/null || true" EXIT
           node scrape_pbp_from_uuid_list.js --concurrency 3 --max ${{ github.event.inputs.max || 500 }}
 
       - name: Commit scraped matches
