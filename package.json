@@ -1,0 +1,12 @@
+{
+  "name": "pbp-scraper",
+  "private": true,
+  "scripts": {
+    "start": "node scrape_pbp_from_uuid_list.js --concurrency 3"
+  },
+  "dependencies": {
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "puppeteer-core": "^22.0.0"
+  }
+}

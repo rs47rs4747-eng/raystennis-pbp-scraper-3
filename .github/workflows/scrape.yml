@@ -1,0 +1,106 @@
+name: Scrape PBP
+
+on:
+  workflow_dispatch:
+    inputs:
+      range:
+        description: "Which UUID range: oldest | middle | newest"
+        required: true
+        default: "middle"
+        type: choice
+        options: [oldest, middle, newest]
+      max:
+        description: "Max matches per job"
+        required: false
+        default: "500"
+  schedule:
+    # Every 6 hours — default to middle
+    - cron: "0 */6 * * *"
+
+# Per-range concurrency groups so 3 runs (oldest/middle/newest) can run in parallel
+concurrency:
+  group: scrape-pbp-${{ github.event.inputs.range || 'middle' }}
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    permissions:
+      contents: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        chunk: [0, 1, 2, 3, 4]  # 5 parallel jobs per run
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Chromium
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser
+
+      - name: Install npm deps
+        run: npm install
+
+      - name: Build chunk UUID file
+        env:
+          RANGE: ${{ github.event.inputs.range || 'middle' }}
+        run: |
+          node -e "
+            const fs = require('fs');
+            const range = process.env.RANGE;
+            const srcFile = '_uuids_' + range + '.json';
+            const all = JSON.parse(fs.readFileSync(srcFile, 'utf8'));
+            const CHUNKS = 5;
+            const size = Math.ceil(all.length / CHUNKS);
+            const idx = ${{ matrix.chunk }};
+            const slice = all.slice(idx * size, (idx + 1) * size);
+            const outFile = '_chunk_' + range + '_${{ matrix.chunk }}.json';
+            fs.writeFileSync(outFile, JSON.stringify(slice));
+            console.log(range + ' chunk ${{ matrix.chunk }}:', slice.length, 'UUIDs');
+          "
+
+      - name: Run scraper
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium-browser
+          OUT_DIR: ${{ github.workspace }}/pbp_matches
+          UUID_FILE: ${{ github.workspace }}/_chunk_${{ github.event.inputs.range || 'middle' }}_${{ matrix.chunk }}.json
+        run: |
+          mkdir -p pbp_matches
+          node scrape_pbp_from_uuid_list.js --concurrency 5 --max ${{ github.event.inputs.max || 500 }}
+
+      - name: Commit scraped matches
+        env:
+          RANGE: ${{ github.event.inputs.range || 'middle' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5 6 7 8; do
+            git add pbp_matches/
+            NEW_COUNT=$(git diff --cached --name-only | wc -l | tr -d ' ')
+            if [ "$NEW_COUNT" -eq 0 ]; then
+              echo "$RANGE chunk ${{ matrix.chunk }}: no new matches"
+              exit 0
+            fi
+            git commit -m "$RANGE chunk ${{ matrix.chunk }}: scraped $NEW_COUNT matches" || true
+            git pull --rebase origin main || true
+            if git push origin main; then
+              echo "$RANGE chunk ${{ matrix.chunk }}: pushed on attempt $attempt"
+              exit 0
+            fi
+            echo "$RANGE chunk ${{ matrix.chunk }}: push attempt $attempt failed, retrying…"
+            sleep $((RANDOM % 15 + 5))
+          done
+          echo "$RANGE chunk ${{ matrix.chunk }}: FAILED to push after 8 attempts"
+          exit 1
