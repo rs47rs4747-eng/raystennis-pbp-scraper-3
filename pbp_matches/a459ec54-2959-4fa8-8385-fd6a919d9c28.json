@@ -1,0 +1,14 @@
+{
+  "uuid": "a459ec54-2959-4fa8-8385-fd6a919d9c28",
+  "title": "AMBROGI VS FERNANDEZ",
+  "player1": "AMBROGI",
+  "player2": "FERNANDEZ",
+  "tournament": null,
+  "match_date": "2026-02-22",
+  "set1": "Ambrogi\n\n1\n\n-\n\n0\n\nFernandez\n\nLost Serve\n\n0:15\n\n15:15\n\n30:15\n\n40:15\n\nBP\n\n40:30\n\nBP\n\nGAME:30\n\nPOINTS BREAKDOWN\n\n#\tScore\tWinner\tServe\tOutcome\tLast Shot Type\tRally Length\tOther\tShare\n1\t0:15\tFernandez\t1st Serve\tError Out\tReturn\t1\t\n\t\n\n2\t15:15\tAmbrogi\t1st Serve\tError Net\tForehand\t4\t\n\t\n\n3\t30:15\tAmbrogi\t1st Serve\tError Out\tBackhand\t4\t\n\t\n\n4\t40:15\tAmbrogi\t2nd Serve\t-\t-\t-\t\nBP\n\t\n\n5\t40:30\tFernandez\t2nd Serve\tWinner\tForehand\t3\t\nBP\n\t\n\n6\tGAME:30\tAmbrogi\tDOUBLE FAULT\tError Net\tServe\t0\t\n\t\n\nAmbrogi\n\n2\n\n-\n\n0\n\nFernandez\n\n15:0\n\n30:0\n\n40:0\n\nGAME:0\n\nPOINTS BREAKDOWN\n\n#\tScore\tWinner\tServe\tOutcome\tLast Shot Type\tRally Length\tOther\tShare\n1\t15:0\tAmbrogi\t2nd Serve\tError Net\tReturn\t1\t\n\t\n\n2\t30:0\tAmbrogi\t1st Serve\tError Out\tReturn\t1\t\n\t\n\n3\t40:0\tAmbrogi\t2nd Serve\tError Out\tForehand\t3\t\n\t\n\n4\tGAME:0\tAmbrogi\t1st Serve\tWinner\tForehand\t5\t\n\t\n\nAmbrogi\n\n3\n\n-\n\n0\n\nFernandez\n\nLost Serve\n\n15:0\n\n30:0\n\n30:15\n\n40:15\n\nBP\n\n40:30\n\nBP\n\n40:40\n\n40:A\n\n40:40\n\nA:40\n\nBP\n\nGAME:40\n\nPOINTS BREAKDOWN\n\n#\tScore\tWinner\tServe\tOutcome\tLast Shot Type\tRally Length\tOther\tShare\n1\t15:0\tAmbrogi\t2nd Serve\tError Net\tBackhand\t2\t\n\t\n\n2\t30:0\tAmbrogi\t2nd Serve\tError Net\tForehand\t6\t\n\t\n\n3\t30:15\tFernandez\t1st Serve\tError Out\tForehand\t3\t\n\t\n\n4\t40:15\tAmbrogi\t2nd Serve\tError Net\tForehand\t2\t\nBP\n\t\n\n5\t40:30\tFernandez\t1st Serve\tWinner\tForehand\t3\t\nBP\n\t\n\n6\t40:40\tFernandez\t2nd Serve\tWinner\tVolley\t5\t\n\t\n\n7\t40:A\tFernandez\t1st Serve\tWinner\tForehand\t5\t\n\t\n\n8\t40:40\tAmbrogi\t1st Serve\tError Out\tBackhand\t4\t\n\t\n\n9\tA:40\tAmbrogi\t1st Serve\tError Net\tForehand\t4\t\nBP\n\t\n\n10\tGAME:40\tAmbrogi\t2nd Serve\tError Out\tForehand\t2\t\n\t\n\nAmbrogi\n\n4\n\n-\n\n0\n\nFernandez\n\n15:0\n\n30:0\n\n40:0\n\nGAME:0\n\nPOINTS BREAKDOWN\n\n#\tScore\tWinner\tServe\tOutcome\tLast Shot Type\tRally Length\tOther\tShare\n1\t15:0\tAmbrogi\t1st Serve\tWinner\tForehand\t3\t\n\t\n\n2\t30:0\tAmbrogi\t1st Serve\tError Out\tForehand\t5\t\n\t\n\n3\t40:0\tAmbrogi\t2nd Serve\tError Out\tReturn\t1\t\n\t\n\n4\tGAME:0\tAmbrogi\t2nd Serve\tError Out\tReturn\t1\t\n\t\n\nAmbrogi\n\n4\n\n-\n\n0\n\nFernandez\n\nLost Serve\n\n15:0\n\nGAME:0\n\nPOINTS BREAKDOWN\n\n#\tScore\tWinner\tServe\tOutcome\tLast Shot Type\tRally Length\tOther\tShare\n1\t15:0\tAmbrogi\t2nd Serve\tWinner\tForehand\t6\t\n\t\n\n2\tGAME:0\tAmbrogi\t1st Serve\tWinner\tBackhand\t4\t\n\t",
+  "set2": null,
+  "set3": null,
+  "sets_scraped": 1,
+  "mc_scraped": true,
+  "scraped_at": "2026-04-16T11:08:47.069Z"
+}
