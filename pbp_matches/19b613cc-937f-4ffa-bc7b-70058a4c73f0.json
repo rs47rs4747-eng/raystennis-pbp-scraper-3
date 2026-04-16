@@ -1,0 +1,14 @@
+{
+  "uuid": "19b613cc-937f-4ffa-bc7b-70058a4c73f0",
+  "title": "NIJBOER VS SINHA",
+  "player1": "NIJBOER",
+  "player2": "SINHA",
+  "tournament": null,
+  "match_date": "2026-03-08",
+  "set1": "Nijboer\n\n1\n\n-\n\n0\n\nSinha\n\n0:15\n\n15:15\n\n30:15\n\nACE\n\n40:15\n\n40:30\n\nGAME:30\n\nACE\n\nPOINTS BREAKDOWN\n\n#\tScore\tWinner\tServe\tOutcome\tLast Shot Type\tRally Length\tOther\tShare\n1\t0:15\tSinha\t1st Serve\tError Net\tForehand\t4\t\n\t\n\n2\t15:15\tNijboer\t2nd Serve\tError Out\tForehand\t9\t\n\t\n\n3\t30:15\tNijboer\tACE\tWinner\tServe\t1\t\nACE\n\t\n\n4\t40:15\tNijboer\t1st Serve\tError Out\tReturn\t1\t\n\t\n\n5\t40:30\tSinha\t2nd Serve\tError Net\tBackhand\t2\t\n\t\n\n6\tGAME:30\tNijboer\tACE\tWinner\tServe\t1\t\nACE\n\t\n\nNijboer\n\n2\n\n-\n\n0\n\nSinha\n\nLost Serve\n\n15:0\n\n30:0\n\n40:0\n\nBP\n\nGAME:0\n\nPOINTS BREAKDOWN\n\n#\tScore\tWinner\tServe\tOutcome\tLast Shot Type\tRally Length\tOther\tShare\n1\t15:0\tNijboer\t2nd Serve\tError Out\tForehand\t4\t\n\t\n\n2\t30:0\tNijboer\t1st Serve\tError Net\tBackhand\t6\t\n\t\n\n3\t40:0\tNijboer\t2nd Serve\tError Out\tForehand\t2\t\nBP\n\t\n\n4\tGAME:0\tNijboer\t2nd Serve\tWinner\tBackhand\t6\t\n\t\n\nNijboer\n\n3\n\n-\n\n0\n\nSinha\n\n15:0\n\n30:0\n\nACE\n\n40:0\n\nGAME:0\n\nACE\n\nPOINTS BREAKDOWN\n\n#\tScore\tWinner\tServe\tOutcome\tLast Shot Type\tRally Length\tOther\tShare\n1\t15:0\tNijboer\t1st Serve\tError Out\tBackhand\t11\t\n\t\n\n2\t30:0\tNijboer\tACE\tWinner\tServe\t1\t\nACE\n\t\n\n3\t40:0\tNijboer\t2nd Serve\tWinner\tBackhand\t3\t\n\t\n\n4\tGAME:0\tNijboer\tACE\tWinner\tServe\t1\t\nACE\n\t",
+  "set2": null,
+  "set3": null,
+  "sets_scraped": 1,
+  "mc_scraped": true,
+  "scraped_at": "2026-04-16T18:10:00.232Z"
+}
