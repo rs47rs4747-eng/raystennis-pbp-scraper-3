@@ -1,0 +1,14 @@
+{
+  "uuid": "d21711d5-f91d-437a-b469-bfc27b132652",
+  "title": "KUKUSHKIN VS LOFFHAGEN",
+  "player1": "KUKUSHKIN",
+  "player2": "LOFFHAGEN",
+  "tournament": null,
+  "match_date": "2026-02-24",
+  "set1": "Kukushkin\n\n1\n\n-\n\n0\n\nLoffhagen\n\nLost Serve\n\n15:0\n\n30:0\n\n40:0\n\nBP\n\n40:15\n\nBP\n\n40:30\n\nBP\n\n40:40\n\nA:40\n\nBP\n\nGAME:40\n\nPOINTS BREAKDOWN\n\n#\tScore\tWinner\tServe\tOutcome\tLast Shot Type\tRally Length\tOther\tShare\n1\t15:0\tKukushkin\t1st Serve\tError Out\tForehand\t2\t\n\t\n\n2\t30:0\tKukushkin\t1st Serve\tError Out\tForehand\t8\t\n\t\n\n3\t40:0\tKukushkin\tDOUBLE FAULT\tError Out\tServe\t0\t\nBP\n\t\n\n4\t40:15\tLoffhagen\t1st Serve\tWinner\tForehand\t3\t\nBP\n\t\n\n5\t40:30\tLoffhagen\t1st Serve\tError Out\tBackhand\t3\t\nBP\n\t\n\n6\t40:40\tLoffhagen\t1st Serve\tError Net\tForehand\t3\t\n\t\n\n7\tA:40\tKukushkin\t2nd Serve\tError Out\tForehand\t4\t\nBP\n\t\n\n8\tGAME:40\tKukushkin\t2nd Serve\tWinner\tForehand\t4\t\n\t",
+  "set2": null,
+  "set3": null,
+  "sets_scraped": 1,
+  "mc_scraped": true,
+  "scraped_at": "2026-04-16T17:31:42.239Z"
+}
