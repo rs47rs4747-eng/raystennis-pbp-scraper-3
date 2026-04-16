@@ -6,7 +6,7 @@ on:
       range:
         description: "Which UUID range: oldest | middle | newest"
         required: true
-        default: "middle"
+        default: "oldest"
         type: choice
         options: [oldest, middle, newest]
       max:
@@ -19,7 +19,7 @@ on:
 
 # Per-range concurrency groups so 3 runs (oldest/middle/newest) can run in parallel
 concurrency:
-  group: scrape-pbp-${{ github.event.inputs.range || 'middle' }}
+  group: scrape-pbp-${{ github.event.inputs.range || 'oldest' }}
   cancel-in-progress: false
 
 jobs:
