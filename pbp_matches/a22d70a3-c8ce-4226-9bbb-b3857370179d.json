@@ -1,0 +1,14 @@
+{
+  "uuid": "a22d70a3-c8ce-4226-9bbb-b3857370179d",
+  "title": "DELLAVEDOVA VS DELANEY",
+  "player1": "DELLAVEDOVA",
+  "player2": "DELANEY",
+  "tournament": null,
+  "match_date": "2026-02-08",
+  "set1": "Dellavedova\n\n1\n\n-\n\n0\n\nDelaney\n\n15:0\n\nACE\n\n15:15\n\n30:15\n\n40:15\n\nGAME:15\n\nACE\n\nPOINTS BREAKDOWN\n\n#\tScore\tWinner\tServe\tOutcome\tLast Shot Type\tRally Length\tOther\tShare\n1\t15:0\tDellavedova\tACE\tWinner\tServe\t1\t\nACE\n\t\n\n2\t15:15\tDelaney\tDOUBLE FAULT\tError Out\tServe\t0\t\n\t\n\n3\t30:15\tDellavedova\t1st Serve\tWinner\tForehand\t3\t\n\t\n\n4\t40:15\tDellavedova\t1st Serve\tError Out\tReturn\t1\t\n\t\n\n5\tGAME:15\tDellavedova\tACE\tWinner\tServe\t1\t\nACE\n\t",
+  "set2": null,
+  "set3": null,
+  "sets_scraped": 1,
+  "mc_scraped": true,
+  "scraped_at": "2026-04-16T08:14:46.058Z"
+}
